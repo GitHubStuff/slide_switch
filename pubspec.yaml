@@ -1,0 +1,22 @@
+name: slide_switch
+description: A new Flutter package project.
+version: 0.0.1+1
+author: Steven Smith
+homepage: http://www.icodeforyou.com
+
+environment:
+  sdk: ">=2.10.4 <3.0.0"
+  flutter: ">=1.22.4"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^6.1.0
+  equatable: ^1.2.5
+  shared_preferences: ^0.5.12+4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
