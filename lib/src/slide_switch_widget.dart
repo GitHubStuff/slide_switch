@@ -9,6 +9,7 @@ class SlideSwitchWidget extends StatelessWidget {
   final Widget falseIcon;
   final String tag;
   final Function(String, bool) callback;
+  final Function(String, bool) currentCallback;
   final bool initialState;
   const SlideSwitchWidget({
     @required this.tag,
@@ -18,6 +19,7 @@ class SlideSwitchWidget extends StatelessWidget {
     this.falseCaption,
     this.falseIcon,
     this.initialState = false,
+    this.currentCallback,
   })  : assert(tag != null),
         assert(callback != null),
         assert(trueCaption != null);
@@ -31,6 +33,7 @@ class SlideSwitchWidget extends StatelessWidget {
           switch (widgetState.switchListTileStateType) {
             case SwitchListTileStateType.GetSwitchState:
               currentState = (widgetState as GetSwitchState).state;
+              if (currentCallback != null) currentCallback(tag, currentState);
               break;
             case SwitchListTileStateType.SwitchListTileInitial:
               cubit.getCurrentState();
