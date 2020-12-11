@@ -38,3 +38,7 @@ Expands the `SwitchListTile` to include persisted state, true/false captions, tr
 - `falseCaption` - Widget that will appear when the `SwitchListTile` state is FALSE. If null `trueCaption` persists
 - `falseIcon` - Widget that appears if state is false. If null `trueIcon` persists
 - `initalState` - Optional state of what the `SwitchListTile` is created with
+
+## Summary
+
+Be kind to each other
