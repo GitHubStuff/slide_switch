@@ -37,8 +37,14 @@ class SlideSwitchWidget extends StatelessWidget {
               break;
             case SwitchListTileStateType.SwitchListTileInitial:
               cubit.getCurrentState();
-              return Container();
-              break;
+              /// Return a dummy SwitchListTile for initial state to prevent draw-jank
+              /// while the saved state is loaded from preferences and eventually
+              /// a proper SwitchListTile is drawn.
+              return SwitchListTile(
+                  title: currentState ? trueCaption : (falseCaption ?? trueCaption),
+                  value: currentState,
+                  secondary: currentState ? trueIcon : (falseIcon ?? trueIcon),
+                  onChanged: (_) {});
             case SwitchListTileStateType.TriggerCallback:
               currentState = (widgetState as TriggerCallback).state;
               callback(tag, currentState);
